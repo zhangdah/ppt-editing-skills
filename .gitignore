@@ -1,0 +1,25 @@
+# Interview / project-specific materials (not part of the skill)
+LLM_Tender_Evaluation_System_Presentation.html
+LLM_Tender_Evaluation_System_Presentation.pptx
+SCD_10726_Test_Consultant, Smart Infrastructure & AIoT.docx
+SCD_10726_需求文档.md
+create_ppt.py
+
+# Generated / temp
+*.tmp.pptx
+test_*.pptx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
