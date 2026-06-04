@@ -1,0 +1,42 @@
+[
+  {
+    "op": "set_text",
+    "target": "s1.sp2.p0.r0",
+    "value": "Edited Cover"
+  },
+  {
+    "op": "set_text",
+    "target": "s2.sp2.p0.r0",
+    "value": "Quarterly Fruit Sales"
+  },
+  {
+    "op": "set_text",
+    "target": "s3.sp2.p0.r0",
+    "value": "Sales Chart Q3"
+  },
+  {
+    "op": "set_text",
+    "target": "s5.sp2.p0.r0",
+    "value": "External References"
+  },
+  {
+    "op": "set_text",
+    "target": "s6.sp2.p0.r0",
+    "value": "Imagery"
+  },
+  {
+    "op": "set_text",
+    "target": "s7.sp2.p0.r0",
+    "value": "Closing Notes"
+  },
+  {
+    "op": "set_font",
+    "target": "s1.sp2.p0.r0",
+    "value": {"color": "1F4E79", "bold": true}
+  },
+  {
+    "op": "set_default_font",
+    "target": "s7.sp2.p0",
+    "value": {"size_pt": 36, "italic": true}
+  }
+]

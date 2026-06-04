@@ -9,6 +9,16 @@ create_ppt.py
 *.tmp.pptx
 test_*.pptx
 
+# Archives — never commit zip/large binaries
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Large rendered/preview HTML (regenerable from pptx; keep repo light)
+*_preview.html
+test-templates/*.html
+
 # Python
 __pycache__/
 *.py[cod]

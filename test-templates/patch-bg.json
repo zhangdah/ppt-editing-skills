@@ -1,0 +1,17 @@
+[
+  {
+    "op": "set_text",
+    "target": "s1.sp2.p0.r0",
+    "value": "Patched Title"
+  },
+  {
+    "op": "set_default_font",
+    "target": "s1.sp2.p0",
+    "value": {"size_pt": 56, "bold": true, "color": "0F4C81"}
+  },
+  {
+    "op": "set_text",
+    "target": "s1.sp3.p0.r0",
+    "value": "Edited"
+  }
+]

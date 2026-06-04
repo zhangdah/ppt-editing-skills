@@ -1,0 +1,527 @@
+{
+  "deck": "sample-basic.pptx",
+  "deck_path": "/Users/zhangdah/Documents/ppt-editing-skills/test-templates/sample-basic.pptx",
+  "slide_size_in": [
+    10.0,
+    7.5
+  ],
+  "slide_count": 5,
+  "slides": [
+    {
+      "id": "s1",
+      "index": 1,
+      "part": "ppt/slides/slide1.xml",
+      "shape_count": 2,
+      "shapes": [
+        {
+          "id": "s1.sp2",
+          "name": "Title 1",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s1.sp2.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s1.sp2.p0.r0",
+                  "text": "Basic Presentation",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s1.sp3",
+          "name": "Subtitle 2",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s1.sp3.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s1.sp3.p0.r0",
+                  "text": "A simple sample PowerPoint file",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "index": 2,
+      "part": "ppt/slides/slide2.xml",
+      "shape_count": 2,
+      "shapes": [
+        {
+          "id": "s2.sp2",
+          "name": "Title 1",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s2.sp2.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s2.sp2.p0.r0",
+                  "text": "About Us",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s2.sp3",
+          "name": "Content Placeholder 2",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s2.sp3.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s2.sp3.p0.r0",
+                  "text": "We are dedicated to providing quality services and solutions.",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "index": 3,
+      "part": "ppt/slides/slide3.xml",
+      "shape_count": 2,
+      "shapes": [
+        {
+          "id": "s3.sp2",
+          "name": "Title 1",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s3.sp2.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s3.sp2.p0.r0",
+                  "text": "Our Services",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s3.sp3",
+          "name": "Content Placeholder 2",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s3.sp3.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s3.sp3.p0.r0",
+                  "text": "- Consulting",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "s3.sp3.p1",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s3.sp3.p1.r0",
+                  "text": "- Product Development",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "s3.sp3.p2",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s3.sp3.p2.r0",
+                  "text": "- Support & Maintenance",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "index": 4,
+      "part": "ppt/slides/slide4.xml",
+      "shape_count": 2,
+      "shapes": [
+        {
+          "id": "s4.sp2",
+          "name": "Title 1",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s4.sp2.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s4.sp2.p0.r0",
+                  "text": "Our Growth Data",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s4.sp3",
+          "name": "Content Placeholder 2",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s4.sp3.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s4.sp3.p0.r0",
+                  "text": "Data-driven insights help us make informed decisions.",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "index": 5,
+      "part": "ppt/slides/slide5.xml",
+      "shape_count": 2,
+      "shapes": [
+        {
+          "id": "s5.sp2",
+          "name": "Title 1",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s5.sp2.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s5.sp2.p0.r0",
+                  "text": "Conclusion",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s5.sp3",
+          "name": "Content Placeholder 2",
+          "kind": "auto",
+          "bbox_in": null,
+          "paragraphs": [
+            {
+              "id": "s5.sp3.p0",
+              "align": null,
+              "level": 0,
+              "default_font": {
+                "size_pt": null,
+                "bold": null,
+                "italic": null,
+                "underline": null,
+                "strike": null,
+                "color": null,
+                "font_name": null,
+                "font_name_ea": null,
+                "font_name_cs": null
+              },
+              "runs": [
+                {
+                  "id": "s5.sp3.p0.r0",
+                  "text": "Thank you for your attention!",
+                  "font": {
+                    "size_pt": null,
+                    "bold": null,
+                    "italic": null,
+                    "underline": null,
+                    "strike": null,
+                    "color": null,
+                    "font_name": null,
+                    "font_name_ea": null,
+                    "font_name_cs": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

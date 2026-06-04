@@ -16,7 +16,8 @@ build-consultant-ppt/
     ├── pptx_helpers.py       # import into your generator
     ├── verify_structure.py   # check file validity + XML
     ├── verify_layout.py      # check shapes stay on the canvas
-    └── inspect_slide.py      # dump one slide to stdout for debugging
+    ├── inspect_slide.py      # dump one slide to stdout for debugging
+    └── render_to_html.py     # render the deck to a self-contained HTML preview
 ```
 
 The `scripts/` folder is self-contained. Copy `pptx_helpers.py` next to the generator you write (or add the folder to `sys.path`).
@@ -168,6 +169,35 @@ python3 scripts/inspect_slide.py deck.pptx 3
 
 Dumps every shape on slide 3 with its type, name, bounding box (inches), and text content. Use this when the user says "slide 3 looks broken" — you can see exactly what's there without opening PowerPoint.
 
+### 2.4 `render_to_html.py`
+
+```bash
+python3 scripts/render_to_html.py deck.pptx                  # writes deck_preview.html
+python3 scripts/render_to_html.py deck.pptx --out preview.html
+python3 scripts/render_to_html.py deck.pptx --dpi 192        # retina-resolution render
+python3 scripts/render_to_html.py deck.pptx --keep-pdf       # also keep the PDF
+```
+
+Renders the deck to a single self-contained HTML file containing one PNG per slide. Each page is rendered by **LibreOffice's own engine** (the same code that draws Impress on screen), so fonts, colors, line wrapping, and shape geometry match what you'd see in PowerPoint.
+
+Pipeline: `.pptx → LibreOffice headless → PDF → PyMuPDF → PNG → HTML index`.
+
+Use this whenever a coordinate dump isn't enough and you actually need to *see* the deck. Examples:
+
+- "is this text overflowing its container?" → render and look
+- "are the three cards aligned?" → render and compare visually
+- agent verifying its own output before handing off → render, then attach screenshots
+
+Requirements:
+
+- LibreOffice — install via `brew install --cask libreoffice` on macOS, or `apt install libreoffice` on Debian/Ubuntu. The script auto-detects `/Applications/LibreOffice.app/...`. Pass `--soffice /path/to/soffice` if it's installed somewhere unusual.
+- `pymupdf` — `pip install pymupdf`. Uses the bundled MuPDF to rasterize each PDF page; no external `pdftoppm` needed.
+
+Limitations:
+
+- LibreOffice's PowerPoint compatibility is good for consultant-style decks (rectangles, rounded rectangles, ovals, arrows, plain text), but very complex SmartArt or proprietary effects may render slightly differently than PowerPoint. The script is for **review**, not for distribution as a final artifact.
+- Output HTML embeds PNGs as base64; expect ~150–250 KB per slide at the default 144 DPI, ~600 KB at 192 DPI.
+
 ---
 
 ## 3. Recommended debug loop
@@ -176,9 +206,10 @@ When a deck is reported broken:
 
 1. `python3 scripts/verify_structure.py deck.pptx` — is the file even valid?
 2. `python3 scripts/verify_layout.py deck.pptx` — anything off-canvas or overflowing?
-3. `python3 scripts/inspect_slide.py deck.pptx <N>` — read back the suspect slide.
-4. Fix the generator script (never hand-edit the `.pptx`).
-5. `rm -f deck.pptx && python3 create_ppt.py` — delete first; macOS won't always refresh.
-6. Re-run 1 & 2 before declaring done.
+3. `python3 scripts/render_to_html.py deck.pptx` — render to HTML and *look*; this catches alignment/overflow that math-only checks miss.
+4. `python3 scripts/inspect_slide.py deck.pptx <N>` — read back the suspect slide's shape coordinates.
+5. Fix the generator script (never hand-edit the `.pptx`).
+6. `rm -f deck.pptx && python3 create_ppt.py` — delete first; macOS won't always refresh.
+7. Re-run 1, 2, 3 before declaring done.
 
 See `SKILL.md` Phase 5 for the full root-cause table (`dash_style = 4`, float EMU in connectors, `Inches(i * Inches(x))`, etc.).

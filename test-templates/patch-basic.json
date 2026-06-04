@@ -1,0 +1,27 @@
+[
+  {
+    "op": "set_text",
+    "target": "s1.sp2.p0.r0",
+    "value": "Q3 Review (Edited)"
+  },
+  {
+    "op": "set_text",
+    "target": "s2.sp2.p0.r0",
+    "value": "About Acme Corp"
+  },
+  {
+    "op": "set_text",
+    "target": "s5.sp3.p0.r0",
+    "value": "Thank you — questions?"
+  },
+  {
+    "op": "set_font",
+    "target": "s2.sp2.p0.r0",
+    "value": {"bold": true, "color": "1F4E79"}
+  },
+  {
+    "op": "set_font",
+    "target": "s5.sp3.p0.r0",
+    "value": {"size_pt": 28, "italic": true}
+  }
+]

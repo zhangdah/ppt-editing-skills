@@ -1,0 +1,17 @@
+[
+  {
+    "op": "set_text",
+    "target": "s1.sp2.p0.r0",
+    "value": "Edited Title"
+  },
+  {
+    "op": "set_text",
+    "target": "s1.sp3.p0.r0",
+    "value": "This deck was edited by xml_patch.py"
+  },
+  {
+    "op": "set_font",
+    "target": "s1.sp2.p0.r0",
+    "value": {"color": "C00000", "italic": true}
+  }
+]

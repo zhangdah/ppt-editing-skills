@@ -14,6 +14,19 @@ This skill covers the end-to-end workflow for programmatically generating clean,
 - User reports a broken `.pptx` file (PowerPoint says "content has problems" or offers to "repair")
 - User wants to iteratively refine an existing generated PPT (add/remove slides, adjust layout, fix overflow)
 
+## Co-editing Protocol (read this before any run)
+
+The generator overwrites the target `.pptx` every time it runs. There is no watcher and no merge logic — the script is the source of truth and a regeneration replaces the file wholesale. Before running the generator, tell the user:
+
+1. **Close the deck in PowerPoint / Keynote / LibreOffice before regenerating.** PowerPoint locks the file while open; running the generator may fail to write, or — worse — succeed while PowerPoint holds a stale in-memory copy that overwrites your output the next time the user hits Save.
+2. **Don't edit the deck in PowerPoint by hand and expect those edits to survive.** The next regeneration replaces the file. If the user wants tweaks to persist, the tweaks belong **in the generator script**, not in the binary `.pptx`.
+3. **If the user did make manual edits in PowerPoint, they must tell the agent before the next regeneration.** Otherwise the script will silently discard their work.
+4. **On every resumption, confirm whether the .pptx on disk is still the script's output, or whether the user has touched it since.** If touched, decide together: port the manual edits back into the script, or accept that the next regeneration will overwrite them.
+
+When you (the agent) are about to call `prs.save(...)` or run a generator script, say something like: *"About to (re)write `deck.pptx`. If the deck is open in PowerPoint, please close it first."* This avoids a confusing "where did my changes go?" round-trip.
+
+If the user has spent significant manual effort in PowerPoint and only wants a small text or font fix from here on, **don't regenerate** — that would discard their work. Stop, tell them this skill regenerates from the script, and let them decide whether to port the manual edits back into the script first.
+
 ## Core Workflow
 
 Follow this ordered pipeline. Do not skip verification steps — they prevent the most common failure modes.
@@ -173,6 +186,21 @@ for i, slide in enumerate(prs.slides):
 
 If anything is out of bounds, fix the generator script and regenerate.
 
+### Check D: Visual rendering (recommended)
+
+Coordinate math (Check C) only catches off-canvas bugs. For visual issues — bad alignment, overlapping text, font fallback, line wrapping mistakes — you need to actually **see** the deck. Use the bundled renderer to produce a self-contained HTML preview:
+
+```bash
+python3 .cursor/skills/build-consultant-ppt/scripts/render_to_html.py output.pptx
+# wrote output_preview.html (N slide(s), ~K KB)
+```
+
+This calls LibreOffice headless to convert the deck to PDF, then renders each page as a PNG embedded into a single HTML file. The output is the same as opening the deck in PowerPoint — fonts, colors, line wraps, shape geometry — and works without any GUI app open.
+
+Open the HTML in a browser, or read it back yourself by inspecting each PNG. If you see a problem (text overflowing a card, two shapes overlapping, wrong color), fix the generator script and regenerate.
+
+Requirements: LibreOffice (`brew install --cask libreoffice` on macOS) and `pip install pymupdf`. If LibreOffice isn't installed, fall back to Check C only.
+
 ## Phase 5: Repair Loop
 
 When PowerPoint reports "content has problems" or the user reports visible issues (missing nodes, overlapping text, wrong content), enter this loop. **Don't guess — diagnose systematically.**
@@ -187,7 +215,16 @@ Ask the user (or read their screenshot/message) to identify:
 
 ### Step 2: Inspect the generated file
 
-Don't guess what's on the slide — read it back:
+Don't guess what's on the slide. Use one of two views, depending on what you need:
+
+**Visual (best for layout/alignment issues):** render the deck to HTML and look at it.
+
+```bash
+python3 .cursor/skills/build-consultant-ppt/scripts/render_to_html.py output.pptx
+open output_preview.html
+```
+
+**Coordinate dump (best for "which shape is at which EMU position"):**
 
 ```python
 from pptx import Presentation
